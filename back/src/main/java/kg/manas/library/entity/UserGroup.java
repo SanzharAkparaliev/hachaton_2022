@@ -1,5 +1,6 @@
 package kg.manas.library.entity;
 
+import kg.manas.library.model.UserGroupModel;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,4 +32,12 @@ public class UserGroup {
             name = "USER_GROUP_DESCRIPTION"
     )
     String description;
+
+    public UserGroupModel toModel(){
+        return UserGroupModel.builder()
+                .id(id)
+                .name(name)
+                .description(description)
+                .build();
+    }
 }
