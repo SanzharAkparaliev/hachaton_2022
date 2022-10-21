@@ -1,11 +1,11 @@
 package kg.manas.library.entity;
 
 
+import kg.manas.library.model.UserNotificationModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
 
@@ -28,4 +28,13 @@ public class UserNotification {
     @JoinColumn(name = "user_id")
     private User userId;
     boolean isViewed;
+
+    UserNotificationModel toModel(){
+        return UserNotificationModel.builder()
+                .id(id)
+                .notificationId(notificationId)
+                .userId(userId)
+                .isViewed(isViewed)
+                .build();
+    }
 }
