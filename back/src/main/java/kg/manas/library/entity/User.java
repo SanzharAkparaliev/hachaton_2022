@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 @Entity
 @NoArgsConstructor
 @Table(name = "USERS")
-@SequenceGenerator(name = "SEQ_ID", sequenceName = "USER_SEQ", allocationSize = 1, initialValue = 10)
+@SequenceGenerator(name = "SEQ_ID", sequenceName = "USER_SEQ", allocationSize = 1)
 public class User extends BaseEntity implements UserDetails, Serializable {
 
     @Id
@@ -38,6 +38,9 @@ public class User extends BaseEntity implements UserDetails, Serializable {
     @JoinColumn(name = "fk_role")
     private Role role;
 
+    @ManyToOne
+    @JoinColumn(name = "USER_GROUP_ID")
+    UserGroup userGroupId;
 
     @Override
     @Transactional(propagation= Propagation.REQUIRED, readOnly=true, noRollbackFor=Exception.class)
