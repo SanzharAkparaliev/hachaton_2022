@@ -5,7 +5,7 @@ import kg.manas.library.model.BookCategoryModel;
 import java.util.List;
 
 
-public interface CategoryService {
+public interface BookCategoryService {
     BookCategoryModel get(Long id);
 
     BookCategoryModel save(BookCategoryModel bookCategoryModel);
