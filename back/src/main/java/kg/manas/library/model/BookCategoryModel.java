@@ -1,6 +1,5 @@
 package kg.manas.library.model;
 
-
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -10,7 +9,9 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class PublisherModel {
+public class BookCategoryModel {
+
     Long id;
-    String name;
+    String categoryName;
+
 }

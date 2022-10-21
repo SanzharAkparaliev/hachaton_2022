@@ -1,15 +1,15 @@
 package kg.manas.library.service;
 
-import kg.manas.library.model.CategoryModel;
+import kg.manas.library.model.BookCategoryModel;
 
 import java.util.List;
 
 
 public interface CategoryService {
-    CategoryModel get(Long id);
+    BookCategoryModel get(Long id);
 
-    CategoryModel save(CategoryModel categoryModel);
+    BookCategoryModel save(BookCategoryModel bookCategoryModel);
 
-    List<CategoryModel> getAll();
+    List<BookCategoryModel> getAll();
 
 }

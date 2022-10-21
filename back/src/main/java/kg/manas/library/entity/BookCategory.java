@@ -1,7 +1,7 @@
 package kg.manas.library.entity;
 
 
-import kg.manas.library.model.CategoryModel;
+import kg.manas.library.model.BookCategoryModel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -22,8 +22,8 @@ public class BookCategory extends BaseEntity{
     @Column(name = "CATEGORY_NAME")
     private String categoryName;
 
-    public CategoryModel toModel() {
-        return CategoryModel.builder()
+    public BookCategoryModel toModel() {
+        return BookCategoryModel.builder()
                 .id(id)
                 .categoryName(categoryName)
                 .build();

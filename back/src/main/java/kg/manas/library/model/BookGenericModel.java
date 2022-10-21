@@ -9,9 +9,10 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class CategoryModel {
-
+public class BookGenericModel {
     Long id;
-    String categoryName;
-
+    String name;
+    BookCategoryModel bookCategory;
+    BookAuthorModel bookAuthor;
+    String edition;
 }

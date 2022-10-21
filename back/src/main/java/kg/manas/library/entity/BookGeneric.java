@@ -1,7 +1,7 @@
 package kg.manas.library.entity;
 
 
-import kg.manas.library.model.ProductModel;
+import kg.manas.library.model.BookGenericModel;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -35,10 +35,13 @@ public class BookGeneric extends BaseEntity{
     @Column(name = "BOOK_EDITION")
     String edition;
 
-    public ProductModel toModel(){
-        return ProductModel.builder()
+    public BookGenericModel toModel() {
+        return BookGenericModel.builder()
                 .id(id)
-                .categoryModel(bookCategory.toModel())
+                .name(name)
+                .bookCategory(bookCategory.toModel())
+                .bookAuthor(bookAuthor.toModel())
+                .edition(edition)
                 .build();
     }
 

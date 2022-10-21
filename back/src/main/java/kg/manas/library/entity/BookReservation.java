@@ -1,6 +1,7 @@
 package kg.manas.library.entity;
 
 import kg.manas.library.enums.ReservationStatus;
+import kg.manas.library.model.BookReservationModel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -44,4 +45,19 @@ public class BookReservation extends BaseEntity{
 
     @Column(name = "COMMENT")
     String comment;
+
+
+    public BookReservationModel toModel() {
+        return BookReservationModel.builder()
+                .id(id)
+                .bookUnitModel(bookUnit.toModel())
+                .userModel(user.toModel())
+                .reservationEndDate(reservationEndDate)
+                .status(status)
+                .extendedCount(extendedCount)
+                .numberOfDaysPastDue(numberOfDaysPastDue)
+                .passedDate(passedDate)
+                .comment(comment)
+                .build();
+    }
 }

@@ -1,7 +1,6 @@
 package kg.manas.library.controller;
 
-import kg.manas.library.entity.BookCategory;
-import kg.manas.library.model.CategoryModel;
+import kg.manas.library.model.BookCategoryModel;
 import kg.manas.library.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,20 +16,20 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @GetMapping
-    public List<CategoryModel> getAllCategory(){
-        List<CategoryModel> categories = categoryService.getAll();
+    public List<BookCategoryModel> getAllCategory(){
+        List<BookCategoryModel> categories = categoryService.getAll();
         return categories;
     }
 
     @GetMapping("/{id}")
-    public CategoryModel getCategoryById(@PathVariable("id") Long id){
-        CategoryModel category = categoryService.get(id);
+    public BookCategoryModel getCategoryById(@PathVariable("id") Long id){
+        BookCategoryModel category = categoryService.get(id);
         return category;
     }
 
     @PostMapping
-    public ResponseEntity<CategoryModel> createCategory(@RequestBody CategoryModel categoryModel){
-        CategoryModel newCategory = categoryService.save(categoryModel);
-        return new ResponseEntity<>(categoryModel, HttpStatus.CREATED);
+    public ResponseEntity<BookCategoryModel> createCategory(@RequestBody BookCategoryModel bookCategoryModel){
+        BookCategoryModel newCategory = categoryService.save(bookCategoryModel);
+        return new ResponseEntity<>(bookCategoryModel, HttpStatus.CREATED);
     }
 }

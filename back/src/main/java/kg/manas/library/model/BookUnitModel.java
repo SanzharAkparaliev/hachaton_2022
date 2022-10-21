@@ -1,9 +1,8 @@
 package kg.manas.library.model;
 
-
+import kg.manas.library.enums.BookStatus;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-
 
 @Getter
 @Setter
@@ -11,8 +10,9 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class AuthorModel {
+public class BookUnitModel {
     Long id;
-    String name;
-    String lifeDescription;
+    BookGenericModel bookGenericModel;
+    BookStatus status;
+    byte[] image;
 }

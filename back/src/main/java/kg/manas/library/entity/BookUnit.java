@@ -1,6 +1,7 @@
 package kg.manas.library.entity;
 
 import kg.manas.library.enums.BookStatus;
+import kg.manas.library.model.BookUnitModel;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,5 +31,16 @@ public class BookUnit extends BaseEntity{
     @Lob
     @Column(name = "IMAGE", columnDefinition = "BYTEA")
     byte[] image;
+
+
+    public BookUnitModel toModel() {
+        return BookUnitModel.builder()
+                .id(id)
+                .bookGenericModel(bookGeneric.toModel())
+                .status(status)
+                .image(image)
+                .build();
+    }
+
 
 }
