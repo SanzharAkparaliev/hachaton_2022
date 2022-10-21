@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @NoArgsConstructor
@@ -29,5 +30,5 @@ public class Notification {
     @JoinColumn(name = "user_group_id")
     private UserGroup userGroupId;
 
-    private Date expiredDate;
+    private LocalDateTime expiredDate;
 }
