@@ -1,5 +1,6 @@
 package kg.manas.library.entity;
 
+import kg.manas.library.model.PublisherModel;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,4 +21,11 @@ public class BookPublisher extends BaseEntity{
 
     @Column(name = "NAME")
     String name;
+
+    public PublisherModel toModel(){
+        return PublisherModel.builder()
+                .id(id)
+                .name(name)
+                .build();
+    }
 }
