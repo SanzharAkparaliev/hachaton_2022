@@ -29,7 +29,7 @@ public class UserNotification {
     private User userId;
     boolean isViewed;
 
-    UserNotificationModel toModel(){
+    public UserNotificationModel toModel(){
         return UserNotificationModel.builder()
                 .id(id)
                 .notificationId(notificationId)
