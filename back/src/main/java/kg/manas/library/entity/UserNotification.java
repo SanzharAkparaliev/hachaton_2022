@@ -21,7 +21,11 @@ public class UserNotification {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "notification_id")
+    private Notification notificationId;
+
+    @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private User userId;
     boolean isViewed;
 }
