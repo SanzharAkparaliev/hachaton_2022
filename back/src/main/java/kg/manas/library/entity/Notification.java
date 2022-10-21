@@ -33,7 +33,7 @@ public class Notification {
 
     LocalDateTime expiredDate;
 
-    NotificationModel toModel(){
+    public NotificationModel toModel(){
         return NotificationModel.builder()
                 .id(id)
                 .title(title)
