@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class BookPublisher extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "BOOK_PUBLISHER_SEQ")
-    @SequenceGenerator(name = "BOOK_PUBLISHER_SEQ", sequenceName = "BOOK_PUBLISHER_SEQ", allocationSize = 1)
+    @SequenceGenerator(name = "SEQ_ID", sequenceName = "BOOK_PUBLISHER_SEQ", allocationSize = 1)
     Long id;
 
     @Column(name = "NAME")
