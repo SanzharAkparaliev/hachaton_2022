@@ -20,11 +20,6 @@ public class UserController {
 
     private final UserService userService;
 
-
-
-
-
-
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody RequestNewUser user) {
         return userService.register(user);

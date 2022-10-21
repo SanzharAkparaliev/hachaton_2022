@@ -25,6 +25,7 @@ public class BookUnitServiceImpl implements BookUnitService {
     private final BookGenericRepository bookGenericRepository;
     private final BookGenericConverter bookGenericConverter;
     private final BookUnitConverter bookUnitConverter;
+
     @Override
     public BookUnitModel getBookUnitById(Long id) {
         return bookUnitRepository.findById(id).orElseThrow(NoSuchElementException::new).toModel();

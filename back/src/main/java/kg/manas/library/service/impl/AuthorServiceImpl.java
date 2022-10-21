@@ -2,7 +2,7 @@ package kg.manas.library.service.impl;
 
 import kg.manas.library.entity.BookAuthor;
 import kg.manas.library.model.BookAuthorModel;
-import kg.manas.library.repository.AuthorRepository;
+import kg.manas.library.repository.BookAuthorRepository;
 import kg.manas.library.service.AuthorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class AuthorServiceImpl implements AuthorService {
-    private final AuthorRepository authorRepository;
+    private final BookAuthorRepository authorRepository;
 
 
     @Override

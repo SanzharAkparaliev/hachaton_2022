@@ -2,7 +2,9 @@ package kg.manas.library.converters;
 
 import kg.manas.library.entity.BookUnit;
 import kg.manas.library.model.BookUnitModel;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BookUnitConverter extends ModelConverter<BookUnitModel, BookUnit>{
     public BookUnitConverter() {
         super(BookUnitConverter::convertToEntity, BookUnitConverter::convertToModel);
