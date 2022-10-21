@@ -1,5 +1,6 @@
 package kg.manas.library.entity;
 
+import kg.manas.library.model.NotificationModel;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -21,13 +22,25 @@ public class Notification {
 
     String title;
     String message;
+
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    User userId;
+    @JoinColumn(name = "role_id")
+    Role role;
 
     @ManyToOne
     @JoinColumn(name = "user_group_id")
     UserGroup userGroupId;
 
     LocalDateTime expiredDate;
+
+    NotificationModel toModel(){
+        return NotificationModel.builder()
+                .id(id)
+                .title(title)
+                .message(message)
+                .roleId(role)
+                .expiredDate(expiredDate)
+                .userGroupId(userGroupId)
+                .build();
+    }
 }
