@@ -7,9 +7,11 @@ import kg.manas.library.model.BookReservationModel;
 import kg.manas.library.repository.BookUnitRepository;
 import kg.manas.library.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.NoSuchElementException;
 
+@Component
 public class BookReservationConverter extends ModelConverter<BookReservationModel,BookReservation>{
     public BookReservationConverter() {
         super(BookReservationConverter::convertToEntity, BookReservationConverter::convertToModel);

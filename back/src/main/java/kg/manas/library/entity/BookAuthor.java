@@ -24,7 +24,7 @@ public class BookAuthor extends BaseEntity{
     String name;
 
     @Lob
-    @Column(name = "LIFE_DESCRIPTION", columnDefinition = "CLOB")
+    @Column(name = "LIFE_DESCRIPTION", columnDefinition = "TEXT")
     String lifeDescription;
 
     public BookAuthorModel toModel(){
